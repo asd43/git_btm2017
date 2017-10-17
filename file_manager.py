@@ -19,7 +19,3 @@ def get_transactions():
     with open("transactions.txt", "r") as f:
         trans = list(map(lambda x: x.strip().split(), f.readlines()))
     return trans
-
-
-add_transaction("a", "b", "999")
-get_transactions()
