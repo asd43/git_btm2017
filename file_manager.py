@@ -13,10 +13,17 @@ def add_client(client_name):
         print('Error: Client not added')
 
 def add_transaction(debtor, creditor, amount):
-    pass
-   
+    dca = str(debtor) + ", " + str(creditor) + ", " + str(amount) + "\n"
+    with open("transactions.txt", "a") as f:
+    	f.write(dca)
+    return ":)"
+        
+
 def get_clients():
     return(list(map(lambda x:x.strip(), open(client_filename,'r').readlines())))
 
 def get_transactions():
-    pass
+    with open("transactions.txt", "r") as f:
+        trans = list(map(lambda x: x.strip().split(), f.readlines()))
+    return trans
+
